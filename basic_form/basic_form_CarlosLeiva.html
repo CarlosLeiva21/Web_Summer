@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Form</title>
+
+    <style>
+
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: larger;
+        }
+
+        #fieldset1 {
+            width: fit-content;
+        }
+
+        #fieldset2{
+            width: fit-content;
+        }
+
+        span{
+            color: red;
+        }
+
+
+    </style>
+</head>
+<body>
+    <form action="javascript:console.log('Formulario enviado');" method="post" autocomplete="on">
+        <fieldset id="fieldset1">
+            <legend>General Info:</legend>
+            <label for="fName">First Name: <span>(*)</span> </label>
+            <input type="text" id="fName" required>
+            <label for="lName">Last Name: <span>(*)</span></label>
+            <input type="text" id="lName" required>
+            <br><br>
+            <label for="email">Email:<span>(*)</span></label>
+            <input type="email" id="email" required>
+            <label for="pNumber">Phone Number:<span>(*)</span></label>
+            <input type="tel" id="pNumber" placeholder="e.g. 7013-9518" required pattern="[0-9]{4}-[0-9]{4}">
+            <br><br>
+            <label for="birthday">Birthday:</label>
+            <input type="date" id="birthday"> 
+            <label for="age">Age:</label>
+            <input type="number" id="age" min="1"> 
+        </fieldset>
+        <br><br>
+        <fieldset id="fieldset2">
+            <legend>Address:</legend>
+            <label for="address">Address:<span>(*)</span></label>
+            <input type="text" id="address" required placeholder="523 Av, Doral">
+            <br><br>
+            <label for="lAddress1">Line Address 1:<span>(*)</span></label>
+            <input type="text" id="lAddress1" required>
+            <label for="lAddress2">Line Address 2:</label>
+            <input type="text" id="lAddress2">
+            <br><br>
+            <label for="city">City:</label>
+            <input type="text" id="city" >
+            <label for="state">State:<span>(*)</span></label>
+            <input type="text" id="state" required> 
+            <br><br>
+            <label for="zip">ZIP Code:<span>(*)</span></label>
+            <input type="number" id="zip" required min="1">
+            <label for="country">Country:<span>(*)</span></label>
+            <select name="country" id="country" required>
+                <option value="USA">USA</option>
+                <option value="USA">Costa Rica</option>
+                <option value="USA">Mexico</option>
+                <option value="USA">Panama</option>
+                <option value="Canada">Canada</option>
+                <option value="Germany">Germany</option>
+                <option value="Australia">Australia</option>
+                <option value="SouthAfrica">South Africa</option>
+            </select> 
+        </fieldset>
+        <br><br>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Resetear">
+    </form>
+    <br>
+    <strong><span>(*)</span> required fields</strong>
+    
+
+</body>
+</html>

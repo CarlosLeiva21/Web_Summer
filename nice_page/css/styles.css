@@ -1,0 +1,197 @@
+
+/*Body Style*/
+
+body{
+    background-color: #0b0c10;
+    margin: 0;
+    color: #66fcf1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*Header Style*/
+header{
+    background-color: #1f2833;
+    color:#66fcf1;
+    text-align: center;
+}
+
+header h1{
+    margin: 0;
+}
+
+/*Navbar Styles*/
+.menu{
+    background-color: #66fcf1;
+    width: fit-content;
+    border-radius: 25%;
+    margin: 15px 75px 0px 10px;
+    padding: 5px;
+    float: left;
+}
+
+.menu ul{
+    padding: 0 40;
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+}
+
+.menu li{
+    color: white;
+    font-size: 25px;
+    margin: 10px 0;
+    text-decoration: none;
+    background-color: #45a29e;
+    border: solid 7px #45a29e;
+    border-radius: 45%;
+}
+
+.menu li:hover{
+    background-color: #66fcf1;
+    border-color: #1f2833;
+    color: #0b0c10;
+}
+
+.menu button{
+    color: white;
+    font-size: 25px;
+    margin: 10px 0;
+    text-decoration: none;
+    background-color: #45a29e;
+    border: solid 7px #45a29e;
+    border-radius: 45%;
+    width: 150px;
+}
+
+.menu button:hover{
+    background-color: #66fcf1;
+    border-color: #1f2833;
+    color: #0b0c10;
+}
+
+.menu button:hover{
+    background-color: #66fcf1;
+}
+
+/*Post Styles*/
+
+.section{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 1000px;
+    float: left;
+    margin-right: 50px;
+    background-color: #45a29e;
+    color: #0b0c10;
+    border-radius: 15%;
+    margin-top: 15px;
+}
+
+.section article{
+    border: #1f2833 solid 5px;
+    width: 75%;
+    border-radius: 15%;
+    margin: 35px 35px 35px 125px;
+}
+
+.section hgroup{
+    margin: 50px;
+}
+
+.section hgroup div{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 250px;
+}
+
+.section hgroup img{
+    float: left; 
+}
+
+
+.section footer{
+     margin-bottom: 35px;
+}
+
+.section span{
+    color: white;
+    font-size: large;
+}
+.section h1{
+    color: #66fcf1;
+    font-size: 35px;
+    margin: 10px 0;
+}
+
+.section h3{
+    margin: 5px 0;
+}
+
+/*right section style*/
+.rigthSection{
+    width: fit-content;
+    height: fit-content;
+    float: left;
+}
+
+/*Search*/
+.search{
+    margin-top: 10px;
+    font-size: xx-large;
+}
+
+.search input{
+    width: 250px;
+}
+
+/*Might Follow Styles*/
+.mightFollowID{
+    width: 400px;
+    border: solid #66fcf1 10px;
+    margin: 75px 0px 15px 0px;
+    color: white;
+}
+
+.mightFollowID div{
+    margin: 25px;
+}
+
+.mightFollowID button{
+    color: white;
+    font-size: 20px;
+    margin: 12px 10px;
+    width: 75px;
+    text-decoration: none;
+    background-color: #66fcf1;
+    border: none;
+    border-radius: 45%;
+}
+
+.mightFollowID button:hover{
+    background-color: #45a29e;
+    color: #0b0c10;
+}
+
+.trendsID{
+    width: 400px;
+    border: solid #66fcf1 10px;
+    margin: 25px 35px 15px 0px;
+    color: white;
+
+}
+
+.trendsID div{
+    margin: 35px;
+}
+
+.finalFooter{
+    position: relative;
+    background-color: #1f2833;
+    margin-top: -100px;
+    clear: both;
+    color:#66fcf1;
+    text-align: center;
+    font-size: xx-large;
+}
