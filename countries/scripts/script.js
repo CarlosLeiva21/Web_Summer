@@ -5,7 +5,6 @@ function searchCountries(){
 
   document.getElementById('tBody1').innerHTML = " ";
 
-
   var requestOptions = {
       method: 'GET',
       redirect: 'follow'
@@ -39,23 +38,16 @@ function searchCountries(){
         });
 
         document.getElementById("tBody1").innerHTML = htmlBody
-
     })
+
+
     .catch(error => console.log('error', error));   
 };
-
-//Cerrar los detalles
-function cerrarDetalles(){
-    document.getElementById("detailCard").style.display = "none"
-}
-
 
 //Funcion para ver los detalles del pais
 function verDetalles(name){
 
     document.getElementById("cardBody").innerHTML = ""
-
-    document.getElementById("detailCard").style.display = "block"
 
 
     var requestOptions = {
@@ -84,7 +76,14 @@ function verDetalles(name){
 
       })
       .catch(error => console.log('error', error));   
+
+      document.getElementById("detailCard").style.display = "block"
 };
+
+//Cerrar los detalles
+function cerrarDetalles(){
+    document.getElementById("detailCard").style.display = "none"
+}
 
 // function updateTable(){
 //   searchCountries();
