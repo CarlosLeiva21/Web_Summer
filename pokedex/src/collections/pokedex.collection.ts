@@ -10,7 +10,7 @@ const pokedexSchema = new mongoose.Schema({
         type: String,
     },
     habilities:{
-        type: Array
+        type: Array,
     },
     primaryType:{
         type: String,
