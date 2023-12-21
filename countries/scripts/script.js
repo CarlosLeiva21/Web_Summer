@@ -80,8 +80,8 @@ async function verDetalles(name) {
 
     htmlBody += `<p>Nombre: ${element[0].name.common}</p>`
       + `<p>Nombre Oficial: ${element[0].name.official}</p>`
-      + `<p>Region: ${element[0].region}</p>`
-      + `<p>Subregion: ${element[0].subregion}</p>`
+      + `<p>Region: ${element[0].region?element[0].region:'No tiene region'}</p>`
+      + `<p>Subregion: ${element[0].subregion?element[0].subregion:'No tiene subregion'}</p>`
       + `<p>Continente: ${element[0].continents}</p>`;
 
     const borderNames = await Promise.all(
@@ -98,9 +98,15 @@ async function verDetalles(name) {
     );
 
     htmlBody2 += `<p>Poblacion: ${element[0].population}</p>` + `<p>Nombres Países limítrofes:</p>`;
-    borderNames.forEach(nombre => {
-      htmlBody2 += `<p>${nombre}</p>`;
-    });
+
+    if (borderNames.length !== 0) {
+      borderNames.forEach(nombre => {
+        htmlBody2 += `<li>${nombre}</li>`;
+      });
+    }else{
+      htmlBody2 += `<p>No tiene paises limitrofes</p>`
+    }
+
 
     document.getElementById("cardBody").innerHTML = htmlBody;
     document.getElementById("cardBody2").innerHTML = htmlBody2;
