@@ -125,6 +125,7 @@ function cerrarDetalles() {
 //Funcion que inicializa la dataTable
 function initializeDataTable() {
   let table = new DataTable("#table1", {
-    retrieve: true
+    retrieve: true,
+    "pageLength": 8
   });
 }
