@@ -1,8 +1,21 @@
 import Router from "express";
 import pokedexCollection from "../collections/pokedex.collection";
 import Pokedex from "../model/pokedex.interface"
+import habilityCollection from "../collections/hability.collection";
 
 const router = Router();
+
+//Functions 
+async function checkHability(habilities:number[]): Promise<number> {
+    for(const hability of habilities){
+        const response = await habilityCollection.find({_id: hability}).lean().exec();
+
+        if(response.length === 0){
+            return hability
+        }
+    }
+    return 0;
+}
 
 //Metodo para obtener todos los pokemones
 router.get('/',async (req, res) => {
@@ -18,6 +31,8 @@ router.get('/:pokedexNumber',async (req, res) => {
 
 //Metodo para crear un pokemon
 router.post('/', async (req, res) => {
+
+    var existHability: boolean = true;
 
     const lastPokemon = await pokedexCollection.find().limit(1).sort({$natural:-1});
 
@@ -37,6 +52,13 @@ router.post('/', async (req, res) => {
         secondaryType: req.body.secondaryType,
         description: req.body.description
     };
+
+    const response = await checkHability(p.habilities);
+
+    if (response !== 0){
+        res.status(404).json({message: `Habilidad con id ${response} no encontrada`})
+        return
+    }
 
     const pokemon = await pokedexCollection.create({
         _id: p._id,

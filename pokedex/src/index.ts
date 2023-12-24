@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import express from 'express';
+import express, { Request, Response } from 'express';
 import habilityRoutes from './routes/habilities.routes';
 import pokedexRoutes from './routes/pokedex.routes';
 import userRoutes from './routes/user.routes'
@@ -12,10 +12,20 @@ const app = express();
 const port = 3000;
 app.use(express.json());
 
+//Metodo de autorizacion
+const authenticationMiddleware = (req: Request, res: Response,next: () => any) => {
+    if(req.headers.authorization == 'Basic Y2FybG9zOjIxMDc='){
+        next();
+    }else{
+        return res.status(401).json({message: 'El usuario no esta autorizado'})
+    }
+}
+
 //Usar rutas
-app.use('/habilities',habilityRoutes);
-app.use('/pokemon', pokedexRoutes);
+app.use('/habilities',authenticationMiddleware,habilityRoutes);
+app.use('/pokemon', authenticationMiddleware ,pokedexRoutes);
 app.use('/users', userRoutes);
+
 
 
 const main = async () => {
